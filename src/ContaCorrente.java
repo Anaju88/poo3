@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ContaCorrente {
 
     private String nome;
@@ -19,4 +21,39 @@ public class ContaCorrente {
     }
     public ContaCorrente() {
     }
+
+    public void cadastrarDados(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite seu nome: ");
+        nome = sc.nextLine();
+
+        System.out.println("Digite seu saldo: ");
+        saldo = sc.nextFloat();
+
+        System.out.println("Digite seu limite: ");
+        limite = sc.nextFloat();
+
+        System.out.println("Digite seu tipo de conta: ");
+        tipo = sc.next().charAt(0);
+    }
+
+    public void imprimirDados(){
+        System.out.println("Nome: " + nome + " Saldo: " + saldo + " Limite: " + limite + " Tipo: " + tipo);
+    }
+
+    public void depositarValor(float valor){
+        saldo += valor;
+
+    }
+
+    public void sacarValor(float valor){
+        saldo -= valor;
+        if (this.saldo + this.limite >= valor) {
+                this.saldo -= valor;
+            } else {
+                System.out.println("Saldo insuficiente!");
+    }
+
 }
+    }
