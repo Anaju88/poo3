@@ -22,7 +22,7 @@ public class ContaCorrente {
     public ContaCorrente() {
     }
 
-    public void cadastrarDados(){
+    public float cadastraDados() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite seu nome: ");
@@ -36,14 +36,17 @@ public class ContaCorrente {
 
         System.out.println("Digite seu tipo de conta: ");
         tipo = sc.next().charAt(0);
+        return 0;
     }
 
-    public void imprimirDados(){
+    public float imprimeDados(){
         System.out.println("Nome: " + nome + " Saldo: " + saldo + " Limite: " + limite + " Tipo: " + tipo);
+        return 0;
     }
 
-    public void depositarValor(float valor){
+    public void depositaValor(float valor){
         saldo += valor;
+
 
     }
 
@@ -56,4 +59,7 @@ public class ContaCorrente {
     }
 
 }
-    }
+
+
+
+}
